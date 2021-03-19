@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+{%extends 'base.html'%}
+{%block title%}Update{%endblock%}
+{%block content%}
     <form class="" action="" method="post">
       {% csrf_token %}
       {{form.as_p}}
       <input type="submit" name="update" value="">
     </form>
-  </body>
-</html>
+{%endblock%}
