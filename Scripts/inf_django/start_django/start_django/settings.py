@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'fg7bj@7xed5a!()@mqy3dvj_z#(@_+rl9wsfgj8r(&#gv_b-r*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = TRUE
 
 ALLOWED_HOSTS = []
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bookmark',
+    'photo',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
