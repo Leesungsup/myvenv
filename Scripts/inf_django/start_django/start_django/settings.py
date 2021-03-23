@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'fg7bj@7xed5a!()@mqy3dvj_z#(@_+rl9wsfgj8r(&#gv_b-r*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = TRUE
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -123,3 +123,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
+MEDIA_URL='/media/'
+MEDIA_ROOT=os.path.join(BASE_DIR,'po')
