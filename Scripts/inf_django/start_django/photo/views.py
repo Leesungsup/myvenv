@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Photo
 from django.views.generic.edit import CreateView,DeleteView,UpdateView
 from django.shortcuts import redirect
+from django.urls import reverse_lazy
 # Create your views here.
 def photo_list(request):
     #보여줄 사진 데이터
@@ -19,3 +20,11 @@ class PhotoUploadView(CreateView):
             return redirect('..')
         else:
             return self.render_to_response({'form':form})
+class PhotoDeleteView(DeleteView):
+    model=Photo
+    success_url=reverse_lazy('photo_list')
+    template_name='photo/delete.html'
+class PhotoUpdateView(UpdateView):
+    model=Photo
+    fields=['photo','text']
+    template_name='photo/update.html'
