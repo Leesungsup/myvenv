@@ -22,5 +22,6 @@ urlpatterns = [
     path('welcome/', welcome),
     path('test/',template_test),
     path('bookmark/',include('bookmark.urls')),
+    path('photo/',include('photo.urls')),
     path('', index),
 ]
