@@ -21,6 +21,7 @@ from .views import index,welcome,template_test
 urlpatterns = [
 #1차->2차->3차
     path('admin/', admin.site.urls),
+    path('accounts/',include('accounts.urls')),
     path('welcome/', welcome),
     path('test/',template_test),
     path('bookmark/',include('bookmark.urls')),
