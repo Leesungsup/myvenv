@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{%block title%}List{%endblock%}
+{%block content%}
 {%for post in photos%}
 <div class="row">
   <div class="col-md-2"></div>
@@ -8,8 +11,9 @@
     </button>
     <p>{{post.text|linebreaksbr}}</p>
     <p class="text-right">
-      <a href="{ % url 'photo:photo_detail' pk=post.id%}" class="btn btn-xs btn-success"></a>
+      <a href="{% url 'photo:photo_detail' pk=post.id%}" class="btn btn-xs btn-success">댓글달기</a>
       </p>
   </div>
   <div class="col-md-2"></div>
 {%endfor%}
+{%endblock%}
