@@ -126,3 +126,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'po')
+
+#reverse_lazy함수를 사용해서 다른 뷰를 적용할 수 있다.
+LOGIN_REDIRECT_URL='/photo/'
