@@ -6,12 +6,13 @@ from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
-@login_required
+@login_required(login_url="accounts/login/")
 def photo_list(request):
     #보여줄 사진 데이터
     photos=Photo.objects.all()
     return render(request,'photo/list.html',{'photos':photos})
 class PhotoUploadView(LoginRequiredMixin,CreateView):
+    login_url='accounts/login/'
     model=Photo
     fields=['photo','text']#작성자,작성시간
     template_name='photo/upload.html'
@@ -24,10 +25,12 @@ class PhotoUploadView(LoginRequiredMixin,CreateView):
         else:
             return self.render_to_response({'form':form})
 class PhotoDeleteView(LoginRequiredMixin,DeleteView):
+    login_url='accounts/login/'
     model=Photo
     success_url=reverse_lazy('photo_list')
     template_name='photo/delete.html'
 class PhotoUpdateView(LoginRequiredMixin,UpdateView):
+    login_url='accounts/login/'
     model=Photo
     fields=['photo','text']
     template_name='photo/update.html'
