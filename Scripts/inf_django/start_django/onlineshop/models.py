@@ -1,12 +1,12 @@
 from django.db import models
-from django.url import reverse
+from django.urls import reverse
 # Create your models here.
 class Category(models.Model):
     name=models.CharField(max_length=200,db_index=True)
-    meta_description =models.TestField(blank=Ture)
+    meta_description =models.TextField(blank=True)
     slug =models.SlugField(max_length=200,db_index=True,unique=True,allow_unicode=True)
     class Meta:
-        odering=['name']
+        ordering=['name']
         verbose_name='categoty'
         verbose_name_plural='categories'
     def __str__(self):

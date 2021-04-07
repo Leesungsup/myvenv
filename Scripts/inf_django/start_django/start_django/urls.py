@@ -26,6 +26,7 @@ urlpatterns = [
     path('test/',template_test),
     path('bookmark/',include('bookmark.urls')),
     path('photo/',include('photo.urls')),
+    path('onlineshop/',include('onlineshop.urls')),
     path('', index),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
