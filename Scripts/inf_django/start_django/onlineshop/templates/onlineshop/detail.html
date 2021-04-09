@@ -1,0 +1,19 @@
+{% extends 'base1.html' %}
+{% block title %}
+{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-4">
+    <img src="{{product.image.url}}" width="100% alt="">
+  </div>
+  <div class="col">
+    <h1 class="display-6">{{product.name}}</h1>
+    <p><span class="badge badge-secondary">Price</span></p>
+    <form class="" action="index.html" method="post">
+      {% csrf_token %}
+      <input type="submit" class="btn btn-primary" name="" value="Add to Cart">
+    </form>
+    <h5><span class="badge badge-secondary">Description{{product.description|linebreaks}}</span></h5>
+  </div>
+</div>
+{% endblock %}
