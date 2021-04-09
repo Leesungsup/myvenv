@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     'disqus',
     'django.contrib.sites',
     'onlineshop',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.naver',
 ]
 
 MIDDLEWARE = [
@@ -126,11 +130,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+AUTHENTICATION_BACKENDS=[
+'django.contrib.auth.backends.ModelBackend',
+'allauth.account.auth_backends.AuthenticationBackend',
+]
+SITE_ID=1
+
 STATICFILES_DIRS=[os.path.join(BASE_DIR,'static')]
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'po')
 
 #reverse_lazy함수를 사용해서 다른 뷰를 적용할 수 있다.
-LOGIN_REDIRECT_URL='/photo/'
+LOGIN_REDIRECT_URL='/onlineshop/'
 DISQUS_WEBSITE_SHORTNAME='Nodongja'
 SITE_ID=1

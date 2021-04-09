@@ -20,7 +20,8 @@
       {% for product in products %}
       <div class="">
       <div class="card">
-        <img class="card-img-top" src="{{product.image.url}}" alt="">
+        {% if product.image %}<img class="card-img-top" src="{{product.image.url}}" alt="">
+        {% endif %}
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
           <p class="card-text">{{product.description}} <span class="badge badge-secondary">{{product.price}}</span></p>
