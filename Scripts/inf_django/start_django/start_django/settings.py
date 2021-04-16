@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.naver',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,5 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'po')
 LOGIN_REDIRECT_URL='/onlineshop/'
 DISQUS_WEBSITE_SHORTNAME='Nodongja'
 SITE_ID=1
+
+CART_ID='cart_item'
