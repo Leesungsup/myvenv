@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from rest_framework.responce import Response
-from rest_framework.decorates import api_view
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 from .models import Quiz
-from .serializers import QuizSerializer
+from .serializes import QuizSerializer
 # Create your views here.
 @api_view(['GET'])
 def helloAPI(request):
