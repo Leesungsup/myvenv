@@ -1,8 +1,6 @@
 __pycache__/
 *.py[cod]
 
-.Python
-myapi/
 
 db.squlite3
 .DS_Store
